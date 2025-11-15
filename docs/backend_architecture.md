@@ -65,7 +65,7 @@ Todos retornam/aceitam JSON e usam UUIDs gerados pelo app:
 ## 7. Deploy e Ambiente
 - **Local**: docker-compose com `api` + `postgres`.
 - **Staging**: VM pequena (Railway/Fly.io/Render) suficiente para testes reais.
-- Scripts `make migrate`, `make seed` para subir esquemas e dados fake.
+- Scripts `make migrate`, `make seed` (usando Liquibase) para subir esquemas e dados fake.
 
 ## 8. Próximos Passos
 1. Escolher stack (FastAPI/Ktor) e gerar projeto base.

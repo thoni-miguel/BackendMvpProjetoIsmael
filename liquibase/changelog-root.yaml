@@ -1,0 +1,10 @@
+# Root changelog for Liquibase migrations.
+# Add include statements here as features are implemented.
+databaseChangeLog:
+  - logicalFilePath: liquibase/changelog-root.yaml
+  - preConditions:
+      - runningAs:
+          username: ""
+  # Example include
+  # - include:
+  #     file: liquibase/changelog/0001-create-base-tables.yaml

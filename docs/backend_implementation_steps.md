@@ -6,11 +6,11 @@
 
 ## 2. Configuration + Dependency Wiring
 - Centralize config (Hocon/Typesafe) for API keys, ports, rate limits, storage paths, and SQLite DSN.
-- Add ktor-server, kotlinx.serialization, coroutine logging, and database libraries (e.g., Exposed or Ktorm) plus migration tooling (Flyway/LIquibase) that supports SQLite.
+- Add ktor-server, kotlinx.serialization, coroutine logging, database libraries (e.g., Exposed or Ktorm), and Liquibase for SQLite-friendly migrations.
 
 ## 3. Database Schema & Migrations
-- Translate documented entities (`employees`, `epi_types`, `deliveries`, `audit_log`, `media_files`) into SQL migrations with audit fields, foreign keys, and indexes on `updated_at` and `synced_at`.
-- Include bootstrap seed script for fake data and ensure migrations run on startup and via `make migrate`/Gradle task.
+- Translate documented entities (`employees`, `epi_types`, `deliveries`, `audit_log`, `media_files`) into Liquibase change sets with audit fields, foreign keys, and indexes on `updated_at` and `synced_at`.
+- Include bootstrap seed script for fake data and ensure Liquibase runs on startup and via `make migrate`/Gradle task.
 
 ## 4. Repository & Domain Models
 - Create Kotlin data classes mirroring DB schema plus serialization annotations.
